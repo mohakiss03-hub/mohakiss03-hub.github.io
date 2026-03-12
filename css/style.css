@@ -1,0 +1,481 @@
+.accueil {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.accueil h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: orange;
+}
+.active {
+    color: orange;
+}
+.cards-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 0;
+}
+.flip-card {
+  width: 300px;
+  height: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+.flip-card-front {
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flip-card-front img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+.flip-card-front h2 {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+}
+.flip-card-back {
+  background-color: #111;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 15px;
+  font-size: 15px;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow-y: auto;
+}
+.flip-card-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.flip-card-back::-webkit-scrollbar-thumb {
+  background-color: orange;
+  border-radius: 3px;
+}
+.presentation img {
+   width: 500px;
+   border-radius: 10px;
+   filter: opacity(100%);
+   height: 600px;
+   object-fit: cover;
+}
+.presentation h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.presentation h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+   color: orange;
+}
+ section {
+    margin: 40px auto;
+    padding: 25px;
+    width: 80%;
+    border-radius: 12px;
+    box-shadow:none;
+    background: none;
+}
+img {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 10px;
+}
+.joueurs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+header{
+position: sticky;
+top: 0;
+z-index: 1000;
+background: linear-gradient(90deg,#000000,#111111,#000000);
+border-bottom: 3px solid orange;
+box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+height: 70px;
+display: flex;
+align-items: center;
+}
+header h1{
+  margin: 0;
+}
+nav{
+display: flex;
+align-items: center;
+justify-content: space-between;
+padding: 0 40px;
+height: 70px;
+}
+.logo{
+font-size: 32px;
+font-weight: bold;
+color: orange;
+letter-spacing: 2px;
+margin-right: 60px;
+}
+nav ul{
+list-style: none;
+display: flex;
+gap: 30px;
+margin: 0;
+padding: 0;
+margin-left: auto;
+}
+nav a{
+text-decoration: none;
+color: white;
+font-weight: bold;
+font-size: 18px;
+position: relative;
+padding: 5px 8px;
+transition: 0.3s;
+}
+nav a:hover{
+color: orange;
+}
+
+nav a::after{
+content:"";
+position:absolute;
+width:0%;
+height:3px;
+left:0;
+bottom:-6px;
+background:orange;
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+.active{
+color: orange;
+}
+.hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.sport h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+   color: orange;
+}
+
+.competitions{
+display:grid;
+grid-template-columns:repeat(2,250px);
+justify-content:center;
+gap: 70px;
+margin-top:60px;
+}
+
+.flip-card:nth-child(1){
+grid-column:1/3;
+justify-self:center;
+}
+
+.flip-card{
+width:250px;
+height:450px;
+perspective:1000px;
+justify-content: center;
+display: flex;
+align-items: center;
+ border-radius: 10px ;
+font-weight: bold;
+background-color: transparent;
+box-shadow: 0 0 15px orange;
+transition: 0.3s all;
+overflow: hidden;
+position: relative;
+}
+.flip-card::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(0deg, transparent, orange,transparent);
+    animation: rotation 4s linear infinite;
+}
+.flip-card-inner {
+    position: absolute;
+    inset: 4px;
+    background: black;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.flip-inner{
+position:relative;
+width:100%;
+height:100%;
+transition:transform 0.8s;
+transform-style:preserve-3d;
+background-color: transparent;
+box-shadow: none;
+}
+
+.flip-card:hover .flip-inner{
+transform:rotateY(180deg);
+}
+
+.flip-front, .flip-back{
+position:absolute;
+width:100%;
+height:100%;
+backface-visibility:hidden;
+border-radius:12px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+box-shadow:none;
+padding:15px;
+}
+
+.flip-front{
+background: orange;
+color:white;
+font-size:22px;
+}
+
+.flip-back{
+background:white;
+transform:rotateY(180deg);
+flex-direction:column;
+}
+
+.flip-back img{
+width:100%;
+border-radius:12px;
+margin-bottom:10px;
+}
+.competitions .flip-back p{
+font-size:16px;
+}
+.competitions .flip-back p {
+    font-size: 16px;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+}
+.competitions{
+background: transparent;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+background-attachment: fixed;
+box-shadow: none;
+padding: 0%;
+display: flex;
+justify-content: center;
+gap: 50px;
+}
+.modifie {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+#video-bg{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -1;
+}
+.video-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: center;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 300px); 
+  grid-template-rows: repeat(3, 200px);  
+  gap: 20px;
+  justify-content: center; 
+}
+.video-grid > .video-card:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.video-grid > .video-card:nth-child(2) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.video-grid > .video-card:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.video-grid > .video-card:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+.video-grid > .video-card:nth-child(5) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.video-card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  position: relative;
+}
+
+.video-card .video-front,
+.video-card .video-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+}
+
+.video-card .video-front {
+  background-color: orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  transform: rotateY(0deg);
+}
+
+.video-card .video-back {
+  transform: rotateY(180deg);
+}
+
+.video-card:hover .video-front {
+  transform: rotateY(180deg);
+}
+
+.video-card:hover .video-back {
+  transform: rotateY(0deg);
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+video{
+width:100%;
+border-radius:10px;
+box-shadow: 0 0 15px #00ff88;
+border: 3px solid orange;
+transition: 0.4s;
+}
+.logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: orange;
+    letter-spacing: 2px;
+}
+@keyframes rotation{
+    0%{ transform: rotate(0deg);}
+    100%{ transform: rotate(360deg);}
+}
+#paragraphe {
+    font-size: 18px;
+    color: black;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+.equipes{
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 30px;
+padding: 40px;
+}
+
+.carte{
+position: relative;
+background-color: black;
+padding: 20px;
+border-radius: 15px;
+text-align: center;
+color: white;
+overflow: hidden;
+}
+.carte::before{
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(0deg, transparent, orange, transparent);
+animation: rotation 4s linear infinite;
+}
+.carte *{
+position: relative;
+z-index: 1;
+}
+@keyframes rotation{
+0%{transform: rotate(0deg);}
+100%{transform: rotate(360deg);}
+}
+.carte:hover{
+transform: scale(1.05);
+}
+.carte img{
+width: 100%;
+height: 180px;
+object-fit: cover;
+border-radius: 10px;
+}
+.carte h3{
+margin-bottom: 10px;
+}
